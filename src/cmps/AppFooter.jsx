@@ -1,14 +1,13 @@
-
 import { useSelector } from 'react-redux'
 import { UserMsg } from './UserMsg.jsx'
 
 export function AppFooter() {
-    const count = useSelector(storeState => storeState.userModule.count)
+    const count = useSelector(storeState => storeState.userModule.count) || 0
 
     return (
         <footer className="app-footer">
             <p>
-                coffeerights - count: {count}
+                © 2024 InstaMode. All rights reserved. | Users count: {count}
             </p>
             <UserMsg />
         </footer>
