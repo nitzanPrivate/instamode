@@ -1,6 +1,6 @@
 import { Link, NavLink } from 'react-router-dom'
 import { useNavigate } from 'react-router'
-import {useSelector} from 'react-redux'
+import { useSelector } from 'react-redux'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { login, logout, signup } from '../store/user.actions'
 import { LoginSignup } from './LoginSignup.jsx'
@@ -40,17 +40,14 @@ export function AppHeader() {
     return (
         <header className="app-header">
             <nav>
-                <NavLink to="">Home 🏠</NavLink>
-                <NavLink to="about">About</NavLink>
-                <NavLink to="car">Cars</NavLink>
-                <NavLink to="chat">Chat</NavLink>
-                <NavLink to="review">Review</NavLink>
-                <NavLink to="board">Boards</NavLink>
+                <NavLink to="/">Home 🏠</NavLink>
+                <NavLink to="/about">About</NavLink>
+                <NavLink to="/chat">Chat</NavLink>
 
                 {user &&
                     <span className="user-info">
                         <Link to={`user/${user._id}`}>
-                            {user.imgUrl && <img src={user.imgUrl} />}
+                            {user.imgUrl && <img src={user.imgUrl} alt="user profile" />}
                             {user.fullname}
                         </Link>
                         <span className="score">{user.score?.toLocaleString()}</span>
@@ -63,7 +60,7 @@ export function AppHeader() {
                     </section>
                 }
             </nav>
-            <h1>My App</h1>
+            <h1>InstaMode</h1>
         </header>
     )
 }
