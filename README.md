@@ -1,8 +1,22 @@
-# React + Vite
+# InstaMode
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a React application using Vite for fast development and build processes. It includes a basic setup for managing global state with Redux, routing with React Router, and styling with SASS. The application is configured for deployment on GitHub Pages.
 
-Currently, two official plugins are available:
+## Project Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Technologies Used
+
+- **React**: A JavaScript library for building user interfaces.
+- **Vite**: A build tool that provides a fast development environment and builds your project efficiently.
+- **Redux**: A state management library for managing global state.
+- **React Router**: A library for routing in React applications.
+- **SASS**: A CSS preprocessor for writing more maintainable and modular CSS.
+- **Axios**: A promise-based HTTP client for making API requests.
+- **Socket.IO**: A library for real-time communication between the client and server.
+
+### Installation
+
+To install the necessary dependencies, run:
+
+```bash
+npm install
