@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
-import PropTypes from 'prop-types'
 
 export function AboutUs() {
     const [count, setCount] = useState(100)
@@ -8,6 +7,7 @@ export function AboutUs() {
     function onTellMeMore() {
         console.log('Telling you more')
     }
+    
     return (
         <section>
             <h2>About Us</h2>
@@ -19,14 +19,6 @@ export function AboutUs() {
             <section>
                 <Outlet />
             </section>
-
-            <SplitPane
-                left={
-                    <Contacts />
-                }
-                right={
-                    <Projects />
-                } />
 
             <FancyBox onClose={() => console.log('ok, closing')}>
                 <h3>{count.toLocaleString()} Followers</h3>
@@ -43,8 +35,8 @@ export function AboutTeam() {
         <section>
             <h2>Best Team</h2>
             <ul>
-                <li>Popo Decaprio </li>
-                <li>Jini Baba</li>
+                <li>Nitzan Paz</li>
+                <li>Joy "The best Dog"</li>
             </ul>
         </section>
     )
@@ -64,68 +56,9 @@ export function AboutVision() {
     )
 }
 
-
 function FancyBox(props) {
     return <div className="fancy-box">
         <button style={{ float: 'right' }} onClick={props.onClose}>x</button>
         {props.children}
     </div>
 }
-
-FancyBox.propTypes = {
-    onClose: PropTypes.func.isRequired
-}
-
-function Contacts() {
-    return <section style={{ height: '50vh', backgroundColor: 'pink' }}>
-        <h2>Contacts</h2>
-        <p>Click me</p>
-    </section>
-}
-
-function Projects() {
-    const [projs, setProjs] = useState(['Puki Proj', 'Muki Proj'])
-    const projList = projs.map((proj, idx) => (
-        <article className="proj-preview" key={proj} onClick={(ev) => {
-            ev.stopPropagation()
-            setProjs(projs.filter(p => p !== proj))
-        }}>
-            {proj}
-        </article>
-    ))
-    return <section style={{ minHeight: '50vh', backgroundColor: 'lightblue' }}>
-        <h2>Projects</h2>
-        {projList}
-        <button onClick={ev => {
-            ev.stopPropagation()
-            setProjs([...projs, 'Babu Proj' + Date.now() % 100])
-        }}>Add</button>
-    </section>
-}
-
-function SplitPane(props) {
-
-    const [width, setWidth] = useState(30)
-
-    if (false && width === 60) {
-        throw new Error('Projects cannot load')
-    }
-    return (
-        <div className="split-pane" style={{
-            display: 'flex'
-        }}>
-            <div style={{ width: width + '%' }} onClick={() => {
-                if (width + 10 <= 100) setWidth(width + 10)
-            }}>
-                {props.left}
-            </div>
-            <div style={{ flex: 1 }} onClick={() => {
-                if (width > 10) setWidth(width - 10)
-            }}>
-                {props.right}
-            </div>
-        </div>
-    )
-}
-
-
