@@ -21,7 +21,9 @@ const isLocalhost = Boolean(
  export function register(config) {
     if ('serviceWorker' in navigator) {
         // Define the service worker URL based on the current environment
-        const swUrl = `${window.location.origin}/instamode/service-worker.js`; // Ensure there's no trailing slash before 'service-worker.js'
+        // const swUrl = `${window.location.origin}/instamode/service-worker.js`;
+        const swUrl = `${window.location.origin}${BASE_URL}/service-worker.js`;
+
 
         window.addEventListener('load', () => {
             if (process.env.NODE_ENV === 'production') {
