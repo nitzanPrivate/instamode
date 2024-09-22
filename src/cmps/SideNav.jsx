@@ -17,13 +17,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 export function SideNav() {
     return (
         <nav className="side-nav">
+             <h1 className="logo">InstaMode</h1>
             <List
                 className="nav-bar" 
                 sx={{ position: 'fixed', width: '300px', height: '100%', bgcolor: 'background.paper' }}
                 component="nav"
                 aria-labelledby="nested-list-subheader"
             >
-                <ListItemButton component={Link} to="/instamode">
+                <ListItemButton component={Link} to="/">
                     <ListItemIcon>
                         <HomeIcon />
                     </ListItemIcon>
