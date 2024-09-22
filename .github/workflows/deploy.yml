@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - github_actions
+      - master
+
+permissions:
+  contents: write
 
 jobs:
   deploy:
