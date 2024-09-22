@@ -1,0 +1,17 @@
+.top-bar {
+    display: flex;
+    align-items: center; 
+    padding: 10px;
+    background-color: #f1f1f1;
+
+    .stories {
+        display: flex; 
+        overflow-x: auto; 
+        img {
+            width: 50px; 
+            height: 50px; 
+            margin-right: 10px;
+            border-radius: 50%; 
+        }
+    }
+}
