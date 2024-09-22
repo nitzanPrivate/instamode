@@ -7,7 +7,7 @@ export function RootCmp() {
         <div>
             <main>
                 <Routes>
-                    <Route path="/" element={<Login />} /> 
+                    <Route path="/instamode" element={<Login />} /> 
                 </Routes>
             </main>
         </div>

@@ -4,5 +4,5 @@ import svgr from 'vite-plugin-svgr'
 
 export default defineConfig({
   plugins: [react(), svgr()],
-  base: "/instamode/" //for pages enable this and deploy
+  base: "/instamode/"
 })
