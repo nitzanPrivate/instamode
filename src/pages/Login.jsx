@@ -1,18 +1,36 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+
+const mockUsers = [
+    { username: 'user1', password: 'password1' },
+    { username: 'user2', password: 'password2' },
+    { username: 'user3', password: 'password3' },
+];
 
 export function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
-      
-        console.log('Logging in with:', username, password);
+        const user = mockUsers.find(
+            (u) => u.username === username && u.password === password
+        );
+
+        if (user) {
+            console.log('Login successful for:', username);
+            navigate('/');
+        } else {
+            console.log('Login failed: Invalid username or password');
+           
+        }
     };
 
     return (
         <div className="login-page">
-            <img src="/instamode/img/instamode_logo.svg" alt="InstaMode Logo" style={{ width: '100px', marginBottom: '20px' }} /> 
+            <img src="/img/instamode_logo.svg" alt="InstaMode Logo" style={{ width: '100px', marginBottom: '20px' }} />
             <h1>InstaMode</h1>
             <form onSubmit={handleLogin}>
                 <input
