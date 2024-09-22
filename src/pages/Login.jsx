@@ -12,7 +12,7 @@ export function Login() {
 
     return (
         <div className="login-page">
-            <img src="/img/instamode_logo.svg" alt="InstaMode Logo" style={{ width: '100px', marginBottom: '20px' }} /> 
+            <img src="/instamode/img/instamode_logo.svg" alt="InstaMode Logo" style={{ width: '100px', marginBottom: '20px' }} /> 
             <h1>InstaMode</h1>
             <form onSubmit={handleLogin}>
                 <input
