@@ -16,7 +16,23 @@ This project is a React application using Vite for fast development and build pr
 
 ### Installation
 
+## Mock User Data
+
+For testing the login functionality, you can use the following mock user credentials:
+
+- **Username**: `user1`  
+  **Password**: `password1`
+
+- **Username**: `user2`  
+  **Password**: `password2`
+
+- **Username**: `user3`  
+  **Password**: `password3`
+
+
 To install the necessary dependencies, run:
 
 ```bash
 npm install
+
+
