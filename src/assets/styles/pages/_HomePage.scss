@@ -1,29 +1,41 @@
 .home-page {
     display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    .main-layout {
+        display: flex; /* Align SideNav and posts section horizontally */
+        flex: 1; 
+    }
 
     .side-nav {
+        display: flex; 
         border-color: black;
         border-style: solid;
         border-width: 1px;
         width: 50%; 
-        background-color: #fff; 
+        background-color: #ffffff; 
         flex: 1
     }
 
-    .main-content {
-        flex: 1; // Take up remaining space
+    .posts-section {
+        flex: 1;
         display: flex;
-        flex-direction: column;
-        border-color: black;
+        flex-direction: column; /* Stack TopBar above PostsList */
+        border-color: rgb(10, 10, 10);
         border-style: solid;
         border-width: 1px;
 
         .top-bar {
             padding: 10px;
             background-color: #f1f1f1; 
-            
         }
 
-      
+        .posts-list {
+            flex: 1; 
+            padding: 20px; 
+        }
     }
+   
+    
 }
