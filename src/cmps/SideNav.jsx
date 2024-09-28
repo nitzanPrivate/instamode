@@ -34,54 +34,54 @@ export function SideNav() {
 
                 <ListItemButton component={Link} to="/instamode/homepage">
                     <ListItemIcon>
-                        <img src={sideMenuIcons.homeIcon} alt="Home" style={{ width: '24px', height: '24px' }} />
+                        <img src={sideMenuIcons.homeIcon} alt="Home" className="side-nav-icon" />
                     </ListItemIcon>
                     <ListItemText primary="Home" />
                 </ListItemButton>
 
                 <ListItemButton>
                     <ListItemIcon>
-                        <img src={sideMenuIcons.searchIcon} alt="Search" style={{ width: '24px', height: '24px' }} />
+                        <img src={sideMenuIcons.searchIcon} alt="Search" className="side-nav-icon search-icon" />
                     </ListItemIcon>
                     <ListItemText primary="Search" />
                 </ListItemButton>
 
                 <ListItemButton>
                     <ListItemIcon>
-                        <img src={sideMenuIcons.exploreIcon} alt="Explore" style={{ width: '24px', height: '24px' }} />
+                        <img src={sideMenuIcons.exploreIcon} alt="Explore" className="side-nav-icon" />
                     </ListItemIcon>
                     <ListItemText primary="Explore" />
                 </ListItemButton>
 
                 <ListItemButton>
                     <ListItemIcon>
-                        <img src={sideMenuIcons.reelsIcon} alt="Reels" style={{ width: '24px', height: '24px' }} />
+                        <img src={sideMenuIcons.reelsIcon} alt="Reels" className="side-nav-icon"/>
                     </ListItemIcon>
                     <ListItemText primary="Reels" />
                 </ListItemButton>
 
                 <ListItemButton>
                     <ListItemIcon>
-                        <img src={sideMenuIcons.messagesIcon} alt="Messages" style={{ width: '24px', height: '24px' }} />
+                        <img src={sideMenuIcons.messagesIcon} alt="Messages" className="side-nav-icon" />
                     </ListItemIcon>
                     <ListItemText primary="Messages" />
                 </ListItemButton>
 
                 <ListItemButton>
                     <ListItemIcon>
-                        <img src={sideMenuIcons.notificationsIcon} alt="Notifications" style={{ width: '24px', height: '24px' }} />
+                        <img src={sideMenuIcons.notificationsIcon} alt="Notifications" className="side-nav-icon" />
                     </ListItemIcon>
                     <ListItemText primary="Notifications" />
                 </ListItemButton>
 
                 <ListItemButton>
                     <ListItemIcon>
-                        <img src={sideMenuIcons.createIcon} alt="Create" style={{ width: '24px', height: '24px' }} />
+                        <img src={sideMenuIcons.createIcon} alt="Create" className="side-nav-icon" />
                     </ListItemIcon>
                     <ListItemText primary="Create" />
                 </ListItemButton>
 
-                <ListItemButton component={Link} to="/instamode/profile">
+                <ListItemButton component={Link} to="/instamode/profile"> 
                     <ListItemIcon>
                         <AccountCircleIcon />
                     </ListItemIcon>
@@ -90,7 +90,7 @@ export function SideNav() {
 
                 <ListItemButton>
                     <ListItemIcon>
-                        <img src={sideMenuIcons.moreIcon} alt="More" style={{ width: '24px', height: '24px' }} />
+                        <img src={sideMenuIcons.moreIcon} alt="More" className="side-nav-icon" />
                     </ListItemIcon>
                     <ListItemText primary="More" />
                 </ListItemButton>
