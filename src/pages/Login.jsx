@@ -21,10 +21,10 @@ export function Login() {
 
         if (user) {
             console.log('Login successful for:', username);
-            navigate('/');
+            navigate('/instamode/homepage');
         } else {
             console.log('Login failed: Invalid username or password');
-           
+            alert("Invalid username or password"); 
         }
     };
 
