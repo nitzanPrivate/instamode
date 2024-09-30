@@ -29,22 +29,10 @@
         }
 
         &.search-icon {
-            // background-color: #188e00; // Fill color
-            // border-radius: 50%; // Makes it round
-            fill: none;
-            stroke: currentColor;
-            align-items: center; // Center the icon vertically
-            justify-content: center; // Center the icon horizontally
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-width: 2;
+            fill: black;
+            stroke: black;
         }
 
-        &.more-icon {
-            position:absolute;
-            width:28px;
-            height:10px;
-           
         }
-    }
+
 }
