@@ -15,4 +15,24 @@
     .nav-bar {
         padding-top: 10px; 
     }
+
+     // Styles for side nav icons
+     .side-nav-icon {
+        width: 24px; // Default size
+        height: 24px; // Default size
+        filter: brightness(1); // Default brightness
+        transition: filter 0.3s; // Smooth transition for hover effects
+    
+
+        &:hover {
+            filter: brightness(0.7); // Darker when hovered
+        }
+
+        &.search-icon {
+            fill: black;
+            stroke: black;
+        }
+
+        }
+
 }

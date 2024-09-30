@@ -1,13 +1,15 @@
 .app-header {
-    background-color: $clr4;
+    background-color: $clr4; // Set your desired background color
     padding: 10px;
-
+    display: flex; // Use flexbox to align children
+    justify-content: space-between; // Space out the child elements
+    align-items: center; // Center items vertically
 
     .user-info {
-        // background-color: $clr2;
-        // padding: 2px 8px;
         padding-left: 100px;
         color: $clr1;
+        display: flex; // Allow user-info to be in a row
+        align-items: center; // Center the user info vertically
 
         .score {
             background-color: $clr2;
@@ -22,18 +24,15 @@
             height: 32px;
             border-radius: 50%;
             object-fit: cover;
+            margin-right: 10px; // Add some space between the image and the text
         }
     }
 
-    .user-info .btn-link {
-        color: $clr2;
-    }
-
     nav {
-        font-size: .8em;
+        font-size: 0.8em;
         background-color: $clr5;
         padding: 5px;
-
+        display: flex; // Align nav items in a row
     }
 
     nav a:first-child {
@@ -47,7 +46,6 @@
     }
 
     nav .active {
-        color: $clr1;
+        color: $clr1; // Style for active nav item
     }
-
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 
-export function TopBar() {
+export function StoryTopBar() {
     return (
-        <div className="top-bar">
+        <div className="story-top-bar">
             {/* Example story items */}
             <div className="stories">
                 <img src="path_to_story1" alt="Story 1" />
