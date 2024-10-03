@@ -1,15 +1,16 @@
 .side-nav {
-    width: 300px; 
-    border-right: 1px solid #dbdbdb;
+    display: flex;
+    flex-direction: column;
     height: 100vh; 
+    position: fixed; // Fix the sidebar to the left
+    top: 0; // Align to the top
+    left: 0; // Align to the left
+    width: 72px;
 
     .logo {
         font-family: var(--font-family-system); 
-        font-size: 24px; 
         font-weight: bold; 
-        margin: 20px; 
-        text-align: center;
-        color: #000; // Ensure visibility
+        margin: 20px;      
     }
 
     .nav-bar {
@@ -18,6 +19,7 @@
 
      // Styles for side nav icons
      .side-nav-icon {
+        display: flex;
         width: 24px; // Default size
         height: 24px; // Default size
         filter: brightness(1); // Default brightness
@@ -34,5 +36,11 @@
         }
 
         }
+
+        .more-settings {
+            margin-top: auto; 
+        }
+
+       
 
 }
