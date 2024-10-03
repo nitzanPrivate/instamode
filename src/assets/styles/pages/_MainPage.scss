@@ -1,13 +1,8 @@
 .main-page {
     display: grid;
-    grid-template-columns: 1fr 3fr; // SideNav takes 1 part, Posts section takes 3 parts
+    grid-template-columns: 1fr 4fr; // SideNav takes 1 part, Posts section takes 3 parts
     grid-template-rows: auto 1fr; // TopBar takes auto height, Posts section takes the rest
     height: 100vh; // Full viewport height
-
-    .main-layout {
-        display: flex; /* Align SideNav and posts section horizontally */
-        flex: 1; 
-    }
 
     .side-nav {
         align-items: flex-start;
@@ -15,12 +10,13 @@
         display: flex;
         flex-direction: column; // Arrange items vertically
         padding: 10px; // Adjust padding as needed
-        border-right: 1px solid #d757db; // Add a right border   
+       
     }
 
     .posts-section {
-        grid-column: 2; // Align posts-section in the second column
         display: flex;
+        grid-column: 2; // Align posts-section in the second column
+       
         flex-direction: column;
         flex-grow: 1; // Take remaining space
         padding: 20px; // Padding for the posts area
