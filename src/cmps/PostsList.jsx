@@ -6,23 +6,24 @@ import ShareIcon from '../assets/svg/shareIcon.svg?react';
 import SaveIcon from '../assets/svg/saveIcon.svg?react'; 
 
 export function PostsList({ post }) {
-    const [isLiked, setIsLiked] = useState(false);
+    const [isLiked, setIsLiked] = useState(post.likedBy.some(user => user._id === "u101")); // Check if the user has already liked the post
     const [comment, setComment] = useState('');
     const [comments, setComments] = useState(post.comments || []);
+    const [isCommentInputVisible, setIsCommentInputVisible] = useState(false); 
 
     const handleLike = () => {
-        setIsLiked(!isLiked);
+        setIsLiked(prev => !prev);
     };
 
     const handleCommentSubmit = (e) => {
         e.preventDefault();
         if (comment.trim()) {
             const newComment = {
-                id: `c${Date.now()}`, // Generate a unique id for the comment
+                id: `c${Date.now()}`,
                 by: {
                     _id: "u101", // Placeholder for user id
                     fullname: "user1", // Placeholder for user name
-                    imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727618385/lego8_ttcv9g.jpg" // Placeholder for user image
+                    imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727618385/lego8_ttcv9g.jpg"
                 },
                 txt: comment,
             };
@@ -30,6 +31,10 @@ export function PostsList({ post }) {
             setComment('');
         }
     };
+
+    const totalLikes = isLiked 
+        ? post.likedBy.length + 1  // Add 1 if the current user liked the post
+        : post.likedBy.length; // Otherwise, just show the existing likes
 
     return (
         <div className="post">
@@ -47,7 +52,7 @@ export function PostsList({ post }) {
                             <LikeIcon className="like-icon" style={{ fill: 'black' }} />
                         )}
                     </button>
-                    <button className="comment-button">
+                    <button onClick={() => setIsCommentInputVisible(!isCommentInputVisible)} className="comment-button">
                         <CommentIcon className="comment-icon" />
                     </button>
                     <button className="share-button">
@@ -58,16 +63,20 @@ export function PostsList({ post }) {
                     <SaveIcon className="save-icon" />
                 </button>
             </div>
-            <div className="likes-count">{isLiked ? 1 : 0} {isLiked ? 'like' : 'likes'}</div>
-            <form onSubmit={handleCommentSubmit} style={{ display: 'none' }}>
-                <input
-                    type="text"
-                    value={comment}
-                    onChange={(e) => setComment(e.target.value)}
-                    placeholder="Add a comment..."
-                />
-                <button type="submit">Submit</button>
-            </form>
+            {totalLikes > 0 && ( // Only show likes count if greater than 0
+                <div className="likes-count">{totalLikes} {totalLikes === 1 ? 'like' : 'likes'}</div>
+            )}
+            {isCommentInputVisible && (
+                <form onSubmit={handleCommentSubmit}>
+                    <input
+                        type="text"
+                        value={comment}
+                        onChange={(e) => setComment(e.target.value)}
+                        placeholder="Add a comment..."
+                    />
+                    <button type="submit">Submit</button>
+                </form>
+            )}
             <div className="comments">
                 {comments.map(comment => (
                     <div key={comment.id} className="comment">
