@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { mockUsers } from '../mockData/mockUsers'; 
+import { storageService } from '../services/async-storage.service';
 
 export function Login() {
     const [username, setUsername] = useState('');
@@ -14,6 +15,8 @@ export function Login() {
         );
 
         if (user) {
+            // Save user details in local storage
+            storageService.saveUser(user); 
             console.log('Login successful for:', username);
             navigate('/instamode/homepage');
         } else {

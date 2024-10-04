@@ -4,9 +4,13 @@ import UnlikeIcon from '../assets/svg/unlikeIcon.svg?react';
 import CommentIcon from '../assets/svg/commentIcon.svg?react'; 
 import ShareIcon from '../assets/svg/shareIcon.svg?react';
 import SaveIcon from '../assets/svg/saveIcon.svg?react'; 
+import { mockUsers } from '../mockData/mockUsers'; 
 
 export function PostsList({ post }) {
-    const [isLiked, setIsLiked] = useState(post.likedBy.some(user => user._id === "u101")); // Check if the user has already liked the post
+    const currentUser = JSON.parse(localStorage.getItem('currentUser')); // Retrieve the current user from local storage
+    const currentUserId = currentUser ? currentUser.user_id : null; // Get the current user ID
+
+    const [isLiked, setIsLiked] = useState(post.likedBy.some(user => user._id === currentUserId)); // Check if the current user has liked the post
     const [comment, setComment] = useState('');
     const [comments, setComments] = useState(post.comments || []);
     const [isCommentInputVisible, setIsCommentInputVisible] = useState(false); 
@@ -20,15 +24,12 @@ export function PostsList({ post }) {
         if (comment.trim()) {
             const newComment = {
                 id: `c${Date.now()}`,
-                by: {
-                    _id: "u101", // Placeholder for user id
-                    fullname: "user1", // Placeholder for user name
-                    imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727618385/lego8_ttcv9g.jpg"
-                },
+                by: getUserById(currentUserId, mockUsers), // Fetch user details using the ID
                 txt: comment,
             };
             setComments([...comments, newComment]);
             setComment('');
+            setIsCommentInputVisible(false); // Hide input after submission
         }
     };
 
@@ -63,7 +64,7 @@ export function PostsList({ post }) {
                     <SaveIcon className="save-icon" />
                 </button>
             </div>
-            {totalLikes > 0 && ( // Only show likes count if greater than 0
+            {totalLikes > 0 && (
                 <div className="likes-count">{totalLikes} {totalLikes === 1 ? 'like' : 'likes'}</div>
             )}
             {isCommentInputVisible && (
@@ -89,3 +90,9 @@ export function PostsList({ post }) {
         </div>
     );
 }
+
+// Utility function to get user by ID
+const getUserById = (userId, users) => {
+    const user = users.find(user => user.user_id === userId);
+    return user ? { fullname: user.username, imgUrl: user.imgUrl } : { fullname: 'Unknown', imgUrl: '' };
+};
