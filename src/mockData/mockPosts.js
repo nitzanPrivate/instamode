@@ -36,7 +36,7 @@ export const mockPosts = [
         comments: [
             {
                 id: "u101",
-                by: getUserById("u105", mockUsers),
+                by: getUserById("u106", mockUsers),
                 txt: "Whoooooooooooooooooooooooooooooooooooooooooo",
             },
             {
