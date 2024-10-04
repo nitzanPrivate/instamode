@@ -36,7 +36,7 @@ export const mockPosts = [
     {
         _id: "s102",
         txt: "Chilling at the beach!",
-        imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727522137/cld-sample-2.jpg",
+        imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727522136/samples/dessert-on-a-plate.jpg",
         by: {
             _id: "u102",
             fullname: "John Doe",
@@ -70,7 +70,7 @@ export const mockPosts = [
     {
         _id: "s103",
         txt: "Exploring the mountains!",
-        imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727522137/cld-sample-2.jpg",
+        imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727522136/samples/coffee.jpg",
         by: {
             _id: "u103",
             fullname: "Emma Stone",
