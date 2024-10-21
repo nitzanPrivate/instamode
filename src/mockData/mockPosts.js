@@ -14,7 +14,7 @@ export const mockPosts = [
         comments: [
             {
                 id: "c1001",
-                by: getUserById("u105", mockUsers), // Fetch user details for the comment
+                by: getUserById("u105", mockUsers),
                 txt: "Good one!",
             },
             {
