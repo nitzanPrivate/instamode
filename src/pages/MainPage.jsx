@@ -1,10 +1,20 @@
 import React from 'react';
-import { SideNav } from '../cmps/SideNav'; 
-import { StoryTopBar } from '../cmps/StoryTopBar'; 
-import { PostsList} from '../cmps/PostsList';
-import { mockPosts } from '../mockData/mockPosts.js'; // Ensure this path is correct
+import { SideNav } from '../cmps/SideNav';
+import { StoryTopBar } from '../cmps/StoryTopBar';
+import { PostsList } from '../cmps/PostsList';
+import { mockPosts } from '../mockData/mockPosts.js';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 export function MainPage() {
+    const loggedInUser = useSelector(storeState => storeState.userModule.user);
+    const navigate = useNavigate();
+
+    if (!loggedInUser) {
+        navigate('/instamode/login');
+        return null;
+    }
+
     return (
         <section className="main-page">
             <SideNav />
