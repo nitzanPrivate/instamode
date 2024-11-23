@@ -1,6 +1,8 @@
 import { userService } from '../services/user.service'
 import { socketService } from '../services/socket.service'
 import { store } from '../store/store'
+import { mockUsers } from '../mockData/mockUsers'; 
+
 
 import { showErrorMsg } from '../services/event-bus.service'
 import { LOADING_DONE, LOADING_START } from './system.reducer'
@@ -27,18 +29,43 @@ export async function removeUser(userId) {
     }
 }
 
+// export async function login(credentials) {
+//     try {
+//         const user = await userService.login(credentials)
+//         store.dispatch({
+//             type: SET_USER,
+//             user
+//         })
+//         socketService.login(user)
+//         return user
+//     } catch (err) {
+//         console.log('Cannot login', err)
+//         throw err
+//     }
+// }
+
 export async function login(credentials) {
     try {
-        const user = await userService.login(credentials)
+        // Replace the backend login call with checking mock users
+        const user = mockUsers.find(
+            (u) => u.username === credentials.username && u.password === credentials.password
+        );
+
+        if (!user) throw new Error('Invalid username or password');
+
+        // Dispatch the action to set the user in the Redux store
         store.dispatch({
             type: SET_USER,
             user
-        })
-        socketService.login(user)
-        return user
+        });
+
+        // Simulate socket login for future features
+        socketService.login(user);
+        return user;
+
     } catch (err) {
-        console.log('Cannot login', err)
-        throw err
+        console.log('Cannot login', err);
+        throw err;
     }
 }
 
