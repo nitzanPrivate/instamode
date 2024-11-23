@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { SideNav } from '../cmps/SideNav';
 import { StoryTopBar } from '../cmps/StoryTopBar';
 import { PostsList } from '../cmps/PostsList';
@@ -10,10 +10,11 @@ export function MainPage() {
     const loggedInUser = useSelector(storeState => storeState.userModule.user);
     const navigate = useNavigate();
 
-    if (!loggedInUser) {
-        navigate('/instamode/login');
-        return null;
-    }
+    useEffect(() => {
+        if (!loggedInUser) navigate('/instamode/login');
+    }, [loggedInUser, navigate]);
+
+    if (!loggedInUser) return null;
 
     return (
         <section className="main-page">
@@ -21,7 +22,7 @@ export function MainPage() {
             <div className="posts-section">
                 <StoryTopBar />
                 {mockPosts.map(post => (
-                    <PostsList key={post._id} post={post} /> // Render each post
+                    <PostsList key={post._id} post={post} />
                 ))}
             </div>
         </section>

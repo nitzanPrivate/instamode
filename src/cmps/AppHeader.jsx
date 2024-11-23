@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router'
 import { useSelector } from 'react-redux'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { login, logout, signup } from '../store/user.actions'
-import { LoginSignup } from './LoginSignup.jsx'
+import { Login } from '../pages/Login'
 
 export function AppHeader() {
     const user = useSelector(storeState => storeState.userModule.user)
@@ -56,7 +56,7 @@ export function AppHeader() {
                 }
                 {!user &&
                     <section className="user-info">
-                        <LoginSignup onLogin={onLogin} onSignup={onSignup} />
+                        <Login onLogin={onLogin} onSignup={onSignup} />
                     </section>
                 }
             </nav>
