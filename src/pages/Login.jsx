@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { mockUsers } from '../mockData/mockUsers'; 
+import { useDispatch } from 'react-redux';
+import { mockUsers } from '../mockData/mockUsers';
 import { storageService } from '../services/async-storage.service';
+import { SET_USER } from '../store/user.reducer';
 
 export function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -15,13 +18,15 @@ export function Login() {
         );
 
         if (user) {
-            // Save user details in local storage
-            storageService.saveUser(user); 
+            // Save user details in local storage and in Redux state
+            storageService.saveUser(user);
+            dispatch({ type: SET_USER, user });
+
             console.log('Login successful for:', username);
             navigate('/instamode/homepage');
         } else {
             console.log('Login failed: Invalid username or password');
-            alert("Invalid username or password"); 
+            alert("Invalid username or password");
         }
     };
 
