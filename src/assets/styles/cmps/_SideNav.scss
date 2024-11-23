@@ -1,44 +1,60 @@
 .side-nav {
     display: flex;
     flex-direction: column;
-    height: 100vh; 
-    position: fixed; // Fix the sidebar to the left
-    top: 0; // Align to the top
-    left: 0; // Align to the left
-    width: 72px;
+    height: 100vh;
+    position: fixed; /* Fix the sidebar to the left */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 240px; /* Wider than 72px to accommodate text */
+    background-color: #fff; /* Optional: Add background color if needed */
 
     .logo {
-        font-family: var(--font-family-system); 
-        font-weight: bold; 
-        margin: 20px;      
+        font-family: var(--font-family-system);
+        font-weight: bold;
+        padding: 20px;
+        text-align: center;
     }
 
     .nav-bar {
-        padding-top: 10px; 
+        padding-top: 20px;
     }
-  
-     // Styles for side nav icons
-    .side-nav-icon {
-        display: flex;
-        width: 24px; // Default size
-        height: 24px; // Default size
-        filter: brightness(1); // Default brightness
-        transition: filter 0.3s; // Smooth transition for hover effects
-    
 
+    .side-nav-icon {
+        width: 24px; /* Default size */
+        height: 24px; /* Default size */
+        filter: brightness(1); /* Default brightness */
+        transition: filter 0.3s; /* Smooth transition for hover effects */
+        fill: #000; /* Default icon color */
+        
         &:hover {
-            filter: brightness(0.7); // Darker when hovered
+            filter: brightness(0.7); /* Darker when hovered */
         }
 
         &.search-icon {
             fill: black;
             stroke: black;
         }
+    }
 
-        }
+    .profile-icon {
+        width: 40px; /* Increase size to make it distinct */
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 12px; /* Add some margin to separate from the text */
+    }
 
-        .more-settings {
-            margin-top: auto; 
-        }
-    
-  } 
+    .more-settings {
+        margin-top: auto;
+    }
+
+    .profile-item {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .MuiListItemText-root {
+        margin-left: 8px; /* Space between text and icon */
+    }
+}
