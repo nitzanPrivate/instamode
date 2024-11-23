@@ -21,7 +21,7 @@ export function SideNav() {
   return (
     <nav className="side-nav">
       <div className="logo">
-        <TitleIcon />
+      <h1 className="logo-txt">InstaMode</h1> 
       </div>
 
       <div className="nav-items">
@@ -31,15 +31,7 @@ export function SideNav() {
           component="nav"
           aria-labelledby="nested-list-subheader"
         >
-          {/* Logo List Item */}
-          <ListItemButton component={Link} to="/instamode/homepage">
-            <ListItemIcon>
-              <img src="/img/instamode_logo.svg" style={{ width: "24px", height: "24px" }} />
-              {/* <TitleIcon /> TBD - How i can change the name of the svg title*/}
-            </ListItemIcon>
-            <ListItemText primary="InstaMode" />
-          </ListItemButton>
-
+          
           <ListItemButton component={Link} to="/instamode/homepage">
             <ListItemIcon>
               <HomeIcon className="side-nav-icon" />
