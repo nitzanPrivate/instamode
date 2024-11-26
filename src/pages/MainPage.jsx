@@ -20,7 +20,7 @@ export function MainPage() {
         <section className="main-page">
             <SideNav />
             <div className="posts-section">
-                <StoryTopBar />
+                {/* <StoryTopBar /> */}
                 {mockPosts.map(post => (
                     <PostsList key={post._id} post={post} />
                 ))}
