@@ -5,18 +5,43 @@
     position: fixed; /* Fix the sidebar to the left */
     top: 0; /* Align to the top */
     left: 0; /* Align to the left */
-    width: 240px; /* Wider than 72px to accommodate text */
+    // width: 240px; /* Wider than 72px to accommodate text */
     background-color: #fff; /* Optional: Add background color if needed */
+    padding-top: 8px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-family: apple;
 
     .logo {
-        font-family: var(--font-family-system);
-        font-weight: bold;
-        padding: 20px;
-        text-align: center;
+        padding-top: 25px;
+        padding-bottom: 16px;
+        padding-left: 12px;
+        padding-right: 12px;
+        margin-bottom: 19px;
+        
+        h1 {
+            // font-family: var(--font-family-system);
+            font-weight: bold;
+            text-align: center;
+        }
     }
 
     .nav-bar {
-        padding-top: 20px;
+        // padding-top: 20px;
+        a {
+            svg {
+                fill: none;
+                stroke-width: 2px;
+                stroke-linejoin:"round";
+                stroke: black;
+            }
+            &.active{
+                svg {
+                    fill: black;
+                }
+            }
+        }
     }
 
     .side-nav-icon {

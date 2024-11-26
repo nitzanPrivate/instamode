@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -26,10 +26,18 @@ export function SideNav() {
             <div className="nav-items">
                 <List
                     className="nav-bar"
-                    sx={{ position: "fixed", width: "240px", height: "100%", bgcolor: "background.paper" }}
+                    sx={{ position: "fixed", height: "100%", bgcolor: "background.paper" }}
                     component="nav"
                     aria-labelledby="nested-list-subheader"
                 >
+                    <NavLink to={'/instamode/homepage'}>
+                    <HomeIcon className="side-nav-icon" />
+                    Home
+                    </NavLink>
+                    <NavLink to={'/instamode/homepage'}>
+                    <HomeIcon className="side-nav-icon" />
+                    Search
+                    </NavLink>
                     <ListItemButton component={Link} to="/instamode/homepage">
                         <ListItemIcon>
                             <HomeIcon className="side-nav-icon" />
