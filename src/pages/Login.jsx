@@ -4,6 +4,9 @@ import { useDispatch } from 'react-redux';
 import { mockUsers } from '../mockData/mockUsers';
 import { storageService } from '../services/async-storage.service';
 import { SET_USER } from '../store/user.reducer';
+import loginImage1 from '../assets/svg/login_1.png';
+import loginImage2 from '../assets/svg/login_2.png';
+
 
 export function Login() {
     const [username, setUsername] = useState('');
@@ -18,7 +21,6 @@ export function Login() {
         );
 
         if (user) {
-            // Save user details in local storage and in Redux state
             storageService.saveUser(user);
             dispatch({ type: SET_USER, user });
 
@@ -26,31 +28,46 @@ export function Login() {
             navigate('/instamode/homepage');
         } else {
             console.log('Login failed: Invalid username or password');
-            alert("Invalid username or password");
+            alert('Invalid username or password');
         }
     };
 
     return (
-        <div className="login-page">
-            <img src="/img/instamode_logo.svg" alt="InstaMode Logo" style={{ width: '100px', marginBottom: '20px' }} />
-            <h1>InstaMode</h1>
-            <form onSubmit={handleLogin}>
-                <input
-                    type="text"
-                    placeholder="Phone number, username or email address"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    required
-                />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-                <button type="submit">Log in</button>
-            </form>
+        <div className="login-container">
+            <div className="intro-img">
+                <div className="img-container">
+                <img src={loginImage1} alt="InstaMode" />
+                <img src={loginImage2} alt="InstaMode" className="overlapping-img" />
+                </div>
+            </div>
+
+            <div className="login-section">
+                <div className="login-box">
+                    <h1 className="logo-txt">InstaMode</h1>
+                    <form className="login-form" onSubmit={handleLogin}>
+                        <input
+                            type="text"
+                            name="username"
+                            value={username}
+                            placeholder="Phone number, username, or email address"
+                            onChange={(e) => setUsername(e.target.value)}
+                            required
+                        />
+                        <input
+                            type="password"
+                            name="password"
+                            value={password}
+                            placeholder="Password"
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                        <button type="submit">Log in</button>
+                    </form>
+                </div>
+                <div className="sign-up">
+                    <p>Don't have an account? <a href="/instamode/signup">Sign up</a></p>
+                </div>
+            </div>
         </div>
     );
 }

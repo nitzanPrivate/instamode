@@ -1,31 +1,103 @@
-.login-page {
+// Login.scss
+
+.login-container {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    gap: 32px;
+}
 
-    input {
-        font-size: 15px;
-        width: 120%; 
-        padding: 10px; 
-        margin-bottom: 10px; 
-        border: 1px solid #dbdbdb; 
-        border-radius: 5px;
-        outline: none; 
+.intro-img {
+    align-self: center;
+    margin-right: 32px;
+
+    .img-container {
+        position: relative;
+        display: flex;
+        width: 380px;
+        height: 580px;
+        background-image: url('https://static.cdninstagram.com/images/instagram/xig/homepage/phones/home-phones.png?__makehaste_cache_breaker=HOgRclNOosk');
+        background-position-x: -46px;
+        background-position-y: 0;
+        background-size: 468px 634px;
     }
 
-    button {
-        background-color: #0095f6; 
-        color: white;
-        padding: 10px;
-        width: 120%;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
+    img {
+        position: absolute;
+        width: 200px;
+        height: 400px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
 
-        &:hover {
-            background-color: #007bbf;
+.login-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .login-box {
+        width: 400px;
+        padding: 20px;
+        border: 1px solid rgb(219, 219, 219);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+
+        input {
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #dbdbdb;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #0095f6;
+            color: white;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: #007bbf;
+            }
         }
     }
+
+    .sign-up {
+        margin-top: 12px;
+        text-align: center;
+
+        a {
+            color: #0095f6;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.logo-txt {
+    font-family: 'Pacifico', cursive;
+    color: black;
+    margin-bottom: 20px;
+    font-size: 24px;
 }
