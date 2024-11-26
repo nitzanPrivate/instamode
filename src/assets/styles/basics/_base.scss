@@ -8,9 +8,9 @@
 }
 
 html {
-    font-family: montserrat;
+    // font-family: montserrat;
     line-height: 1.6;
-    color: $clr2;
+    color: $clr7;
 }
 
 body {
@@ -18,12 +18,11 @@ body {
     margin: 0;
     max-width: 1024px;
     margin: auto;
+    font-family: appple;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: caveat;
-    margin: 0 0 0.6em;
-    line-height: 1;
 }
 
 
@@ -41,9 +40,10 @@ p {
 
 a {
     text-decoration: none;
+    color: black;
 }
 a:hover {
-    text-decoration: underline;
+    // text-decoration: underline;
 }
 
 .logo-txt {
@@ -51,3 +51,6 @@ a:hover {
     color: black;  
 }
 
+.css-1edfpdg-MuiTypography-root {
+    font-family: apple !important;
+}
