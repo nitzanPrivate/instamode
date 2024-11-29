@@ -20,55 +20,81 @@ export function SideNav() {
 
             <ul className="nav-bar">
                 <li>
-                    <NavLink to={'/instamode/homepage'}>
+                    <NavLink
+                        to={'/instamode/homepage'}
+                        className={({ isActive }) => isActive ? 'active-link' : ''}
+                    >
                         <HomeIcon className="side-nav-icon" />
                         Home
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to={'/instamode/search'}>
+                    <NavLink
+                        to={'/instamode/search'}
+                        className={({ isActive }) => isActive ? 'active-link' : ''}
+                    >
                         <SearchIcon className="side-nav-icon search-icon" />
                         Search
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to={'/instamode/explore'}>
+                    <NavLink
+                        to={'/instamode/explore'}
+                        className={({ isActive }) => isActive ? 'active-link' : ''}
+                    >
                         <ExploreRoundedIcon className="side-nav-icon" />
                         Explore
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to={'/instamode/messages'}>
+                    <NavLink
+                        to={'/instamode/messages'}
+                        className={({ isActive }) => isActive ? 'active-link' : ''}
+                    >
                         <MessageIcon className="side-nav-icon" />
                         Messages
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to={'/instamode/notifications'}>
+                    <NavLink
+                        to={'/instamode/notifications'}
+                        className={({ isActive }) => isActive ? 'active-link' : ''}
+                    >
                         <NotificationsIcon className="side-nav-icon" />
                         Notifications
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to={'/instamode/create'}>
+                    <NavLink
+                        to={'/instamode/create'}
+                        className={({ isActive }) => isActive ? 'active-link' : ''}
+                    >
                         <CreateIcon className="side-nav-icon" />
                         Create
                     </NavLink>
                 </li>
-                <li className="profile-item">
-                    <NavLink to={`/instamode/${loggedInUser.username}`}>
-                        <img
-                            src={loggedInUser.imgUrl}
-                            alt={`${loggedInUser.username} profile`}
-                            className="profile-icon"
-                        />
-                        Profile
-                    </NavLink>
-                </li>
+                {loggedInUser && ( // Ensure loggedInUser is not null before rendering the profile link
+                    <li className="profile-item">
+                        <NavLink
+                            to={`/instamode/${loggedInUser.username}`}
+                            className={({ isActive }) => isActive ? 'active-link' : ''}
+                        >
+                            <img
+                                src={loggedInUser.imgUrl}
+                                alt={`${loggedInUser.username} profile`}
+                                className="profile-icon"
+                            />
+                            Profile
+                        </NavLink>
+                    </li>
+                )}
             </ul>
 
             <div className="more-settings">
-                <NavLink to={'/instamode/settings'}>
+                <NavLink
+                    to={'/instamode/settings'}
+                    className={({ isActive }) => isActive ? 'active-link' : ''}
+                >
                     <SettingsIcon className="side-nav-icon more-icon" />
                     More
                 </NavLink>
