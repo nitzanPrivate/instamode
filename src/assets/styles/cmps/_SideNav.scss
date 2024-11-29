@@ -3,15 +3,16 @@
     flex-direction: column;
     height: 100vh;
     position: fixed; /* Fix the sidebar to the left */
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
-    // width: 240px; /* Wider than 72px to accommodate text */
-    background-color: #fff; /* Optional: Add background color if needed */
+    top: 0;
+    left: 0;
+    width: 240px; /* Adjust width to accommodate text and ensure it's not too narrow */
+    background-color: #fff;
     padding-top: 8px;
     padding-bottom: 20px;
     padding-left: 12px;
     padding-right: 12px;
     font-family: apple;
+    z-index: 10; /* Ensure side-nav stays above other content */
 
     .logo {
         padding-top: 25px;
@@ -19,67 +20,74 @@
         padding-left: 12px;
         padding-right: 12px;
         margin-bottom: 19px;
-        
+
         h1 {
-            // font-family: var(--font-family-system);
             font-weight: bold;
             text-align: center;
         }
     }
 
     .nav-bar {
-        // padding-top: 20px;
-        a {
-            svg {
-                fill: none;
-                stroke-width: 2px;
-                stroke-linejoin:"round";
-                stroke: black;
-            }
-            &.active{
-                svg {
-                    fill: black;
+        list-style-type: none;
+        padding: 0;
+        margin-top: 10px;
+
+        li {
+            margin-bottom: 20px;
+
+            a {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: black;
+                padding: 10px;
+                transition: background-color 0.3s;
+
+                &:hover {
+                    background-color: #f0f0f0;
+                }
+
+                &.active-link {
+                    font-weight: bold;
+                    background-color: #e0e0e0;
+                }
+
+                .side-nav-icon {
+                    margin-right: 8px;
+                    width: 24px;
+                    height: 24px;
                 }
             }
         }
     }
 
-    .side-nav-icon {
-        width: 24px; /* Default size */
-        height: 24px; /* Default size */
-        filter: brightness(1); /* Default brightness */
-        transition: filter 0.3s; /* Smooth transition for hover effects */
-        fill: #000; /* Default icon color */
-        
-        &:hover {
-            filter: brightness(0.7); /* Darker when hovered */
-        }
+    .more-settings {
+        margin-top: auto;
 
-        &.search-icon {
-            fill: black;
-            stroke: black;
+        a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: black;
+            padding: 10px;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: #f0f0f0;
+            }
+
+            .side-nav-icon {
+                margin-right: 8px;
+                width: 24px;
+                height: 24px;
+            }
         }
     }
 
-    .profile-icon {
-        width: 40px; /* Increase size to make it distinct */
+    .profile-item .profile-icon {
+        width: 40px;
         height: 40px;
         border-radius: 50%;
         object-fit: cover;
-        margin-right: 12px; /* Add some margin to separate from the text */
-    }
-
-    .more-settings {
-        margin-top: auto;
-    }
-
-    .profile-item {
-        display: flex;
-        align-items: center;
-        padding: 10px 20px;
-    }
-
-    .MuiListItemText-root {
-        margin-left: 8px; /* Space between text and icon */
     }
 }

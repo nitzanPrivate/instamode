@@ -17,10 +17,10 @@ export function MainPage() {
     if (!loggedInUser) return null;
 
     return (
-        <section className="main-page">
+        <section className="main-page" style={{ display: 'flex' }}>
             <SideNav />
-            <div className="posts-section">
-                {/* <StoryTopBar /> */}
+            <div className="posts-section" style={{ marginLeft: '240px', padding: '20px', width: 'calc(100% - 240px)' }}>
+                 {/* <StoryTopBar /> */}
                 {mockPosts.map(post => (
                     <PostsList key={post._id} post={post} />
                 ))}

@@ -1,13 +1,8 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
-import List from "@mui/material/List";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
+import { NavLink } from "react-router-dom";
 import HomeIcon from "../assets/svg/homeIcon.svg?react";
 import SearchIcon from "../assets/svg/searchIcon.svg?react";
 import ExploreRoundedIcon from "../assets/svg/exploreRoundedIcon.svg?react";
-import ReelsIcon from "../assets/svg/reelsIcon.svg?react";
 import MessageIcon from "../assets/svg/msgIcon.svg?react";
 import NotificationsIcon from "../assets/svg/notificationsIcon.svg?react";
 import CreateIcon from "../assets/svg/createIcon.svg?react";
@@ -23,90 +18,60 @@ export function SideNav() {
                 <h1 className="logo-txt">InstaMode</h1>
             </div>
 
-            <div className="nav-items">
-                <List
-                    className="nav-bar"
-                    sx={{ position: "fixed", height: "100%", bgcolor: "background.paper" }}
-                    component="nav"
-                    aria-labelledby="nested-list-subheader"
-                >
+            <ul className="nav-bar">
+                <li>
                     <NavLink to={'/instamode/homepage'}>
-                    <HomeIcon className="side-nav-icon" />
-                    Home
+                        <HomeIcon className="side-nav-icon" />
+                        Home
                     </NavLink>
-                    <NavLink to={'/instamode/homepage'}>
-                    <HomeIcon className="side-nav-icon" />
-                    Search
+                </li>
+                <li>
+                    <NavLink to={'/instamode/search'}>
+                        <SearchIcon className="side-nav-icon search-icon" />
+                        Search
                     </NavLink>
-                    <ListItemButton component={Link} to="/instamode/homepage">
-                        <ListItemIcon>
-                            <HomeIcon className="side-nav-icon" />
-                        </ListItemIcon>
-                        <ListItemText primary="Home" />
-                    </ListItemButton>
-
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <SearchIcon className="side-nav-icon search-icon" />
-                        </ListItemIcon>
-                        <ListItemText primary="Search" />
-                    </ListItemButton>
-
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <ExploreRoundedIcon className="side-nav-icon" />
-                        </ListItemIcon>
-                        <ListItemText primary="Explore" />
-                    </ListItemButton>
-
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <ReelsIcon className="side-nav-icon" />
-                        </ListItemIcon>
-                        <ListItemText primary="Reels" />
-                    </ListItemButton>
-
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <MessageIcon className="side-nav-icon" />
-                        </ListItemIcon>
-                        <ListItemText primary="Messages" />
-                    </ListItemButton>
-
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <NotificationsIcon className="side-nav-icon" />
-                        </ListItemIcon>
-                        <ListItemText primary="Notifications" />
-                    </ListItemButton>
-
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <CreateIcon className="side-nav-icon" />
-                        </ListItemIcon>
-                        <ListItemText primary="Create" />
-                    </ListItemButton>
-
-                    <ListItemButton component={Link} to={`/instamode/${loggedInUser.username}`} className="profile-item">
-                        <ListItemIcon>
-                            <img
-                                src={loggedInUser.imgUrl}
-                                alt={`${loggedInUser.username} profile`}
-                                className="profile-icon"
-                            />
-                        </ListItemIcon>
-                        <ListItemText primary="Profile" />
-                    </ListItemButton>
-                </List>
-            </div>
+                </li>
+                <li>
+                    <NavLink to={'/instamode/explore'}>
+                        <ExploreRoundedIcon className="side-nav-icon" />
+                        Explore
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink to={'/instamode/messages'}>
+                        <MessageIcon className="side-nav-icon" />
+                        Messages
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink to={'/instamode/notifications'}>
+                        <NotificationsIcon className="side-nav-icon" />
+                        Notifications
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink to={'/instamode/create'}>
+                        <CreateIcon className="side-nav-icon" />
+                        Create
+                    </NavLink>
+                </li>
+                <li className="profile-item">
+                    <NavLink to={`/instamode/${loggedInUser.username}`}>
+                        <img
+                            src={loggedInUser.imgUrl}
+                            alt={`${loggedInUser.username} profile`}
+                            className="profile-icon"
+                        />
+                        Profile
+                    </NavLink>
+                </li>
+            </ul>
 
             <div className="more-settings">
-                <ListItemButton>
-                    <ListItemIcon>
-                        <SettingsIcon className="side-nav-icon more-icon" />
-                    </ListItemIcon>
-                    <ListItemText primary="More" />
-                </ListItemButton>
+                <NavLink to={'/instamode/settings'}>
+                    <SettingsIcon className="side-nav-icon more-icon" />
+                    More
+                </NavLink>
             </div>
         </nav>
     );
