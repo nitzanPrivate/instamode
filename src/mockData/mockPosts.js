@@ -19,7 +19,7 @@ export const mockPosts = [
             },
             {
                 id: "c1002",
-                by: getUserById("u103",mockUsers),
+                by: getUserById("u103", mockUsers),
                 txt: "Looks amazing!",
             }
         ],
@@ -58,6 +58,217 @@ export const mockPosts = [
         comments: [],
         likedBy: [
             getUserById("u102", mockUsers),
+        ],
+    },
+    {
+        _id: "s104",
+        txt: "Post about kitten",
+        imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727522129/samples/animals/kitten-playing.gif",
+        by: getUserById("u102", mockUsers),
+        comments: [],
+        likedBy: [
+            getUserById("u103", mockUsers),
+            getUserById("u104", mockUsers),
+            getUserById("u105", mockUsers)
+        ],
+    },
+    {
+        _id: "s105",
+        txt: "Post about spices",
+        imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727522129/samples/food/spices.jpg",
+        by: getUserById("u104", mockUsers),
+        comments: [
+            {
+                id: "c2001",
+                by: getUserById("u101", mockUsers),
+                txt: "Looks delicious!",
+            },
+            {
+                id: "c2002",
+                by: getUserById("u102", mockUsers),
+                txt: "Nice colors!",
+            },
+        ],
+        likedBy: [
+            getUserById("u103", mockUsers),
+            getUserById("u104", mockUsers),
+            getUserById("u105", mockUsers),
+            getUserById("u101", mockUsers)
+        ],
+    },
+    {
+        _id: "s106",
+        txt: "Post about bag",
+        imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727522128/samples/ecommerce/leather-bag-gray.jpg",
+        by: getUserById("u101", mockUsers),
+        comments: [],
+        likedBy: [
+            getUserById("u105", mockUsers),
+        ],
+    },
+    {
+        _id: "s107",
+        txt: "Post about dogs",
+        imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727522128/samples/animals/three-dogs.jpg",
+        by: getUserById("u103", mockUsers),
+        comments: [
+            {
+                id: "c3001",
+                by: getUserById("u104", mockUsers),
+                txt: "Adorable!",
+            },
+            {
+                id: "c3002",
+                by: getUserById("u105", mockUsers),
+                txt: "I love dogs!",
+            },
+            {
+                id: "c3003",
+                by: getUserById("u102", mockUsers),
+                txt: "The best pets!",
+            },
+        ],
+        likedBy: [
+            getUserById("u101", mockUsers),
+            getUserById("u102", mockUsers),
+            getUserById("u104", mockUsers),
+            getUserById("u105", mockUsers)
+        ],
+    },
+    {
+        _id: "s108",
+        txt: "Broadway Street / Morris St",
+        imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727522128/samples/landscapes/architecture-signs.jpg",
+        by: getUserById("u105", mockUsers),
+        comments: [],
+        likedBy: [],
+    },
+    {
+        _id: "s109",
+        txt: "Post about shoes",
+        imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727522128/samples/ecommerce/shoes.png",
+        by: getUserById("u102", mockUsers),
+        comments: [
+            {
+                id: "c4001",
+                by: getUserById("u101", mockUsers),
+                txt: "I need these!",
+            },
+        ],
+        likedBy: [
+            getUserById("u103", mockUsers),
+            getUserById("u105", mockUsers)
+        ],
+    },
+    {
+        _id: "s110",
+        txt: "Jazz Band Live!",
+        imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727522128/samples/people/jazz.jpg",
+        by: getUserById("u103", mockUsers),
+        comments: [],
+        likedBy: [],
+    },
+    {
+        _id: "s111",
+        txt: "Kid playing in the snow",
+        imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727522128/samples/people/boy-snow-hoodie.jpg",
+        by: getUserById("u104", mockUsers),
+        comments: [],
+        likedBy: [
+            getUserById("u101", mockUsers),
+        ],
+    },
+    {
+        _id: "s112",
+        txt: "Sheep on the road",
+        imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727522127/samples/sheep.jpg",
+        by: getUserById("u105", mockUsers),
+        comments: [],
+        likedBy: [],
+    },
+    {
+        _id: "s113",
+        txt: "Reindeer wandering around",
+        imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727522127/samples/animals/reindeer.jpg",
+        by: getUserById("u101", mockUsers),
+        comments: [],
+        likedBy: [
+            getUserById("u102", mockUsers),
+            getUserById("u104", mockUsers)
+        ],
+    },
+    {
+        _id: "s114",
+        txt: "Cat enjoying the sun",
+        imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727522127/samples/animals/cat.jpg",
+        by: getUserById("u103", mockUsers),
+        comments: [
+            {
+                id: "c5001",
+                by: getUserById("u105", mockUsers),
+                txt: "Cute cat!",
+            },
+        ],
+        likedBy: [],
+    },
+    {
+        _id: "s115",
+        txt: "Beautiful flowers",
+        imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727522126/sample.jpg",
+        by: getUserById("u105", mockUsers),
+        comments: [],
+        likedBy: [],
+    },
+    {
+        _id: "s116",
+        txt: "Classic Watch",
+        imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727522127/samples/ecommerce/analog-classic.jpg",
+        by: getUserById("u102", mockUsers),
+        comments: [],
+        likedBy: [
+            getUserById("u101", mockUsers),
+            getUserById("u103", mockUsers)
+        ],
+    },
+    {
+        _id: "s117",
+        txt: "Delicious Fish Dish",
+        imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727522127/samples/food/fish-vegetables.jpg",
+        by: getUserById("u104", mockUsers),
+        comments: [],
+        likedBy: [],
+    },
+    {
+        _id: "s118",
+        txt: "Seafood Soup",
+        imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727522127/samples/food/pot-mussels.jpg",
+        by: getUserById("u105", mockUsers),
+        comments: [
+            {
+                id: "c6001",
+                by: getUserById("u102", mockUsers),
+                txt: "Yummy!",
+            },
+        ],
+        likedBy: [],
+    },
+    {
+        _id: "s119",
+        txt: "Bicycle Racing Fun!",
+        imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727522128/samples/people/bicycle.jpg",
+        by: getUserById("u101", mockUsers),
+        comments: [],
+        likedBy: [],
+    },
+    {
+        _id: "s120",
+        txt: "Boat and Beach Relaxation",
+        imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727522128/samples/landscapes/beach-boat.jpg",
+        by: getUserById("u104", mockUsers),
+        comments: [],
+        likedBy: [
+            getUserById("u103", mockUsers),
+            getUserById("u105", mockUsers)
         ],
     },
 ];
