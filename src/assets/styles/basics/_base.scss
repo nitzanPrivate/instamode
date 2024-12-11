@@ -16,8 +16,6 @@ html {
 body {
     font-size: rem(18px);
     margin: 0;
-    max-width: 1024px;
-    margin: auto;
     font-family: appple;
 }
 
@@ -27,7 +25,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 section, main, footer {
-    padding: 5px;
+    // padding: 5px;
 }
 
 img {
@@ -35,7 +33,8 @@ img {
 }
 
 p {
-    margin: 0 0 1em;
+    // margin: 0 0 1em;
+    margin: 0;
 }
 
 a {
@@ -51,6 +50,6 @@ a:hover {
     color: black;  
 }
 
-.css-1edfpdg-MuiTypography-root {
-    font-family: apple !important;
-}
+// .css-1edfpdg-MuiTypography-root {
+//     font-family: apple !important;
+// }

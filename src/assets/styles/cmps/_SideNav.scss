@@ -1,102 +1,159 @@
 .side-nav {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 240px;
-    background-color: #fff;
-    padding-top: 8px;
-    padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 245px;
+  background-color: #fff;
+  padding-top: 8px;
+  padding-bottom: 20px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-family: apple;
+  z-index: 10;
+  border-right: 1px solid $gray5;
+
+  .logo {
+    padding-top: 25px;
+    padding-bottom: 16px;
     padding-left: 12px;
     padding-right: 12px;
-    font-family: apple;
-    z-index: 10;
+    margin-bottom: 19px;
 
-    .logo {
-        padding-top: 25px;
-        padding-bottom: 16px;
-        padding-left: 12px;
-        padding-right: 12px;
-        margin-bottom: 19px;
-
-        h1 {
-            font-weight: bold;
-            text-align: center;
-        }
+    h1 {
+      font-weight: bold;
+      text-align: center;
     }
+  }
 
-    .nav-bar {
-        list-style-type: none;
-        padding: 0;
-        margin-top: 10px;
+  .nav-bar {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
 
-        li {
-            margin-bottom: 20px;
+    li {
+      margin-bottom: 20px;
 
-            a {
-                display: flex;
-                align-items: center;
-                text-decoration: none;
-                color: black;
-                padding: 10px;
-                transition: background-color 0.3s, color 0.3s;
-
-                &:hover {
-                    background-color: #f0f0f0;
-                }
-
-                &.active-link {
-                    font-weight: bold !important;
-                    color: black; /* Text color */
-
-                    .side-nav-icon {
-                        fill: black; /* Icon color when active */
-                       stroke: black !important;
-                    }
-                }
-
-                .side-nav-icon {
-                    margin-right: 8px;
-                    width: 24px;
-                    height: 24px;
-                    fill: none;
-                    // stroke: "currentColor";
-                    transition: fill 0.3s, stroke 0.3s;
-                }
+      .search-preview {
+        stroke: black;
+        fill: black;
+        stroke-width: 2px;
+        &.active {
+          stroke-width: 3px;
+        }
+      }
+      .post-preview {
+        .home-icon {
+          stroke: black;
+          fill: none;
+          stroke-width: 2px;
+        }
+        &.active .home-icon {
+          fill: black;
+        }
+      }
+      .explore-preview {
+        .explore-container-icon {
+          stroke-width: 2px;
+          stroke: black;
+          fill: none;
+          .polygon-1 {
+            // fill: none;
+            stroke-width: 2px;
+            stroke: black;
+          }
+          .polygon-2 {
+            fill: black;
+            stroke-width: 2px;
+            stroke: black;
+          }
+        }
+        &.active .explore-container-icon {
+            // stroke-width: 2px;
+            // stroke: black;
+            // fill: white;
+            .polygon-1 {
+                stroke-width: 2px;
+                stroke: white !important;
+                fill:  white !important;
+                forced-color-adjust: auto;
+            }
+            .polygon-2 {
+                fill: white !important;
+                stroke-width: 2px;
+                stroke: white !important;
+                forced-color-adjust: auto;
+            }
+            .circle-1 {
+                fill: black ;
+                
             }
         }
-    }
+      }
 
-    .more-settings {
-        margin-top: auto;
+      a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+        padding: 10px;
+        transition: background-color 0.3s, color 0.3s;
 
-        a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: black;
-            padding: 10px;
-            transition: background-color 0.3s;
-
-            &:hover {
-                background-color: #f0f0f0;
-            }
-
-            .side-nav-icon {
-                margin-right: 8px;
-                width: 24px;
-                height: 24px;
-             
-            }
+        &:hover {
+          background-color: #f0f0f0;
         }
-    }
 
-    .profile-item .profile-icon {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        object-fit: cover;
+        &.active-link {
+          font-weight: bold !important;
+          color: black; /* Text color */
+
+          .side-nav-icon {
+            //     fill: black; /* Icon color when active */
+            //    stroke: black !important;
+          }
+        }
+
+        .side-nav-icon {
+          margin-right: 8px;
+          width: 24px;
+          height: 24px;
+          // fill: none;
+          // stroke: "currentColor";
+          transition: fill 0.3s, stroke 0.3s;
+        }
+      }
     }
+  }
+
+  .more-settings {
+    margin-top: auto;
+
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: black;
+      padding: 10px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
+
+      .side-nav-icon {
+        margin-right: 8px;
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  .profile-item .profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
 }

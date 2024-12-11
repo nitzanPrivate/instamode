@@ -1,8 +1,11 @@
 .explore-page {
-    display: flex;
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+
 
     .gallery-section {
-        margin-left: 240px;
+        // margin-left: 240px;
         padding: 20px;
         width: calc(100% - 240px);
 

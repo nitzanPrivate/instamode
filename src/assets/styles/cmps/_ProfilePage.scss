@@ -1,0 +1,119 @@
+.profile-page {
+    .profile-header {
+        display: grid;
+        // align-items: center;
+        padding: 20px;
+        width: 935px;
+        line-height: 18px;
+        height: 399px;
+        grid-template-columns: 311.656px 623.344px;
+        font-size: 14px;
+        margin-top: 0px;
+
+        .profile-picture {
+            margin-right: 20px;
+            .profile-img {
+                border-bottom-color: rgb(0, 0, 0);
+                border-bottom-style: none;
+                border-bottom-width: 0px;
+                border-image-outset: 0;
+                border-image-slice: 100%;
+                border-image-repeat: stretch;
+                border-image-width: 1;
+                border-image-source: none;
+                border-left-color: rgb(0, 0, 0);
+                border-left-style: none;
+                border-left-width: 0px;
+                border-right-color: rgb(0, 0, 0);
+                border-right-style: none;
+                border-left-width: 0px;
+                border-left-style: none;
+                direction: ltr;
+                font-feature-settings: normal;
+                font-kerning: auto;
+                font-optical-sizing: auto;
+                display: flex;
+                width: 100px;
+                
+                direction: ltr;
+                font-size: 14px;
+                font-weight: 400;
+                // height: 150px;
+                left: 0px;
+                letter-spacing: normal;
+                line-height: 18px;
+                object-fit: fill;
+
+                flex-direction: column;
+                // height: 100px;
+                border-radius: 50%;
+            }
+        }
+
+        .profile-info {
+            .username {
+                font-size: 20px;
+                font-weight: 400;
+                height: 25px;
+                line-height: 25px;
+                display: block;
+                max-width: 100%;
+                text-align: start;
+               text-overflow: ellipsis;
+               text-size-adjust: 100%;
+               color:rgb(0, 0, 0);
+               color-scheme: light;
+            }
+
+            .profile-stats {
+               
+                span {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+
+    .divider-line {
+        border: 0;
+        border-top: 1px solid #ddd;
+        margin: 10px 0;
+    }
+
+    .profile-tabs {
+        ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+
+            li {
+                padding: 10px 20px;
+                cursor: pointer;
+                font-weight: normal;
+
+                &.active-tab {
+                    font-weight: bold;
+                    border-bottom: 2px solid #000; // Highlight the active tab
+                }
+            }
+        }
+    }
+
+    .profile-content {
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 20px;
+          
+
+            .post-item {
+                .post-img {
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
