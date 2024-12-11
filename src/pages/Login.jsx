@@ -25,7 +25,7 @@ export function Login() {
             dispatch({ type: SET_USER, user });
 
             console.log('Login successful for:', username);
-            navigate('/instamode/homepage');
+            navigate('/instamode/post');
         } else {
             console.log('Login failed: Invalid username or password');
             alert('Invalid username or password');
