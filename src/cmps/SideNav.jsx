@@ -21,17 +21,17 @@ export function SideNav() {
             <ul className="nav-bar">
                 <li>
                     <NavLink
-                        to={'/instamode/homepage'}
-                        className={({ isActive }) => isActive ? 'active-link' : ''}
+                        to={'/instamode/post'}
+                        className={`post-preview ${({ isActive }) => isActive ? 'active-link' : ''}`}
                     >
-                        <HomeIcon className="side-nav-icon" />
+                        <HomeIcon className="side-nav-icon home-icon" />
                         Home
                     </NavLink>
                 </li>
                 <li>
                     <NavLink
                         to={'/instamode/search'}
-                        className={({ isActive }) => isActive ? 'active-link' : ''}
+                        className={`search-preview ${({ isActive }) => isActive ? 'active-link' : ''}`}
                     >
                         <SearchIcon className="side-nav-icon search-icon" />
                         Search
@@ -40,25 +40,25 @@ export function SideNav() {
                 <li>
                     <NavLink
                         to={'/instamode/explore'}
-                        className={({ isActive }) => isActive ? 'active-link' : ''}
+                        className={`explore-preview ${({ isActive }) => isActive ? 'active-link' : ''}`}
                     >
-                        <ExploreRoundedIcon className="side-nav-icon" />
+                        <ExploreRoundedIcon className="side-nav-icon explore-container-icon" />
                         Explore
                     </NavLink>
                 </li>
-                <li>
+                {/* <li>
                     <NavLink
                         to={'/instamode/messages'}
-                        className={({ isActive }) => isActive ? 'active-link' : ''}
+                        className={`messages-preview ${({ isActive }) => isActive ? 'active-link' : ''}`}
                     >
                         <MessageIcon className="side-nav-icon" />
                         Messages
                     </NavLink>
-                </li>
+                </li> */}
                 <li>
                     <NavLink
                         to={'/instamode/notifications'}
-                        className={({ isActive }) => isActive ? 'active-link' : ''}
+                        className={`notifications-preview ${({ isActive }) => isActive ? 'active-link' : ''}`}
                     >
                         <NotificationsIcon className="side-nav-icon" />
                         Notifications
@@ -67,7 +67,7 @@ export function SideNav() {
                 <li>
                     <NavLink
                         to={'/instamode/create'}
-                        className={({ isActive }) => isActive ? 'active-link' : ''}
+                        className={`create-preview ${({ isActive }) => isActive ? 'active-link' : ''}`}
                     >
                         <CreateIcon className="side-nav-icon" />
                         Create
@@ -77,7 +77,7 @@ export function SideNav() {
                     <li className="profile-item">
                         <NavLink
                             to={`/instamode/${loggedInUser.username}`}
-                            className={({ isActive }) => isActive ? 'active-link' : ''}
+                            className={`profile-preview ${({ isActive }) => isActive ? 'active-link' : ''}`}
                         >
                             <img
                                 src={loggedInUser.imgUrl}
