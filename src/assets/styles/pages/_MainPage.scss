@@ -1,36 +1,55 @@
 .main-page {
     display: grid;
-    grid-template-columns: 1fr 4fr; // SideNav takes 1 part, Posts section takes 3 parts
-    grid-template-rows: auto 1fr; // TopBar takes auto height, Posts section takes the rest
-    height: 100vh; // Full viewport height
+    grid-template-columns: 244px 1fr; 
+    height: 100vh; 
+    grid-template-areas: 'side-nav main-content';
+    
 
     .side-nav {
+        grid-area: side-nav;
         align-items: flex-start;
         box-sizing: border-box;
         display: flex;
-        flex-direction: column; // Arrange items vertically
-        padding: 10px; // Adjust padding as needed
-       
+        flex-direction: column; // Arrange items vertically       
+        padding-bottom: 20px;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-top: 8px;
     }
 
-    .posts-section {
-        display: flex;
-        grid-column: 2; // Align posts-section in the second column
+    .main-content {
+        grid-area: main-content;
+        // justify-content: flex-start;
        
+        display: flex;
         flex-direction: column;
-        flex-grow: 1; // Take remaining space
-        padding: 20px; // Padding for the posts area
-    
-        .story-top-bar { // Class for the story top bar
-            padding: 10px;
-            background-color: #f1f1f1; 
-        }
+        align-items: center;
+        // box-sizing: border-box;
+        // line-height: 18px;
+        width: 100%;
+        // text-size-adjust: 100%;
+        // position: static;
+        // grid-column: 2;
+        // flex-grow: 1;
+        // width: min(470px, 100vh);
+      
     }
-        .posts-list {
-            flex: 1; 
-            padding: 20px; 
-        }
+    // .posts-section {
+    //     display: flex;
+    //     grid-column: 2; // Align posts-section in the second column
+       
+    //     flex-direction: column;
+    //     flex-grow: 1; // Take remaining space
+    //     padding: 20px; // Padding for the posts area
     
-   
-    
+    //     .story-top-bar { // Class for the story top bar
+    //         padding: 10px;
+    //         background-color: #f1f1f1; 
+    //     }
+    // }
+    //     .posts-list {
+    //         flex: 1; 
+    //         padding: 20px; 
+    //     }
+
 }
