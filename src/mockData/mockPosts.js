@@ -242,7 +242,7 @@ export const mockPosts = [
         _id: "s118",
         txt: "Seafood Soup",
         imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727522127/samples/food/pot-mussels.jpg",
-        by: getUserById("u105", mockUsers),
+        by: getUserById("u99", mockUsers),
         comments: [
             {
                 id: "c6001",
@@ -256,7 +256,7 @@ export const mockPosts = [
         _id: "s119",
         txt: "Bicycle Racing Fun!",
         imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727522128/samples/people/bicycle.jpg",
-        by: getUserById("u101", mockUsers),
+        by: getUserById("u99", mockUsers),
         comments: [],
         likedBy: [],
     },
@@ -264,7 +264,7 @@ export const mockPosts = [
         _id: "s120",
         txt: "Boat and Beach Relaxation",
         imgUrl: "https://res.cloudinary.com/dyg4ekmzg/image/upload/v1727522128/samples/landscapes/beach-boat.jpg",
-        by: getUserById("u104", mockUsers),
+        by: getUserById("u99", mockUsers),
         comments: [],
         likedBy: [
             getUserById("u103", mockUsers),
